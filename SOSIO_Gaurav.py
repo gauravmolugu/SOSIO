@@ -14,7 +14,6 @@ import tweepy
 from wsgiref.simple_server import make_server
 import praw
 from twython import Twython
-import oauth2 as oauth
 
 #to run the app go to 127.0.0.1:5000/twitter
 
