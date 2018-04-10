@@ -15,7 +15,8 @@ from wsgiref.simple_server import make_server
 import praw
 from twython import Twython
 import oauth2 as oauth
-from urllib.parse import urlparse
+
+#to run the app go to 127.0.0.1:5000/twitter
 
 app = Flask(__name__)
 
@@ -55,8 +56,9 @@ def twitter_login():
         twitter1 = Twython(consumer_key,consumer_secret,OAUTH_TOKEN,OAUTH_TOKEN_SECRET)#was unable to extract OAUTH_TOKEN and OAUTH_TOKEN_SECRET
         for j in range(len(c)):
             twitter1.update_status(status=c[j])
+            #when ever the app is run it tweets on your profile but not on daily basis
+            
         return '<h1>Hey! <h2>Welcome @{} Click <a href="https://twitter.com/"> here </a> to go to twitter'.format(account_info_json['screen_name'])
-
     return '<h1>Request failed!</h1>'
 
 if __name__ == '__main__':
